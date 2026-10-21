@@ -1,0 +1,29 @@
+{
+  "name": "rfmonitor-server-agent",
+  "version": "2.1.0",
+  "description": "RFPROJECT Server Monitor — Backend Agent (Express + WebSocket + Socket.io)",
+  "main": "index.js",
+  "scripts": {
+    "start":     "node index.js",
+    "dev":       "node --watch index.js",
+    "pm2:start": "pm2 start index.js --name rfmonitor-agent --time",
+    "pm2:stop":  "pm2 stop rfmonitor-agent",
+    "pm2:logs":  "pm2 logs rfmonitor-agent"
+  },
+  "dependencies": {
+    "compression":        "^1.7.4",
+    "cors":               "^2.8.5",
+    "dotenv":             "^16.4.5",
+    "express":            "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "helmet":             "^7.1.0",
+    "jsonwebtoken":       "^9.0.2",
+    "pm2":                "^5.4.2",
+    "socket.io":          "^4.7.5",
+    "systeminformation":  "^5.22.11",
+    "ws":                 "^8.17.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

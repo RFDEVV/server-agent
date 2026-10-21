@@ -1,0 +1,22 @@
+[Unit]
+Description=RFMonitor Server Agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=rfmonitor-agent
+Group=rfmonitor-agent
+WorkingDirectory=/opt/rfmonitor-agent
+EnvironmentFile=/opt/rfmonitor-agent/.env
+ExecStart=/usr/bin/node index.js
+Restart=on-failure
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=20
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
